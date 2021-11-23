@@ -1,0 +1,43 @@
+.containers{
+    position: relative;
+    height: 350px;
+    margin: 0px;
+    padding: 0px;
+   
+}
+.dining-bg{
+    height: 350px;
+    background-image:url(../../../components//Home/images/dd.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0px;
+    padding: 0px;
+    filter: brightness(60%);
+}
+.content-block{
+    position: absolute;
+    margin: 0px auto;
+    width: 35%;
+    top: 35%;
+    left: 32%;
+
+  
+  
+}
+.Dining-title{
+    text-align: center;
+    font-weight: 900;
+    color: white;
+}
+.tag{
+    text-align: center;
+    font-size: 11px;
+    color: white;
+    margin: 7px;
+}
+.content{
+    font-size: 11px;
+    text-align: center;
+    color: white;
+}

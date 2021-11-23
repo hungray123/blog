@@ -1,0 +1,70 @@
+.Dining{
+    height: 500px !important;
+    
+}
+.Dingning__row{
+    width: 70%;
+   
+    height: inherit;
+  
+}
+.Dining__col{
+    margin: 0px !important;
+    
+}
+.post__bg1{
+    position: relative;
+    background-image: url(../../../components/Home/images/dd.jpg);
+    height:250px ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    filter: brightness(60%);
+    
+}
+.post__bg2{
+    background-image: url(../../../components/Home/images/nightlife.jpg);
+    height:250px ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    filter: brightness(60%);
+    
+}
+.post__item:hover .post__bg1 {
+    transform: scale(1.1);
+    transition: 2s all;
+    overflow: hidden; 
+}
+.post__item:hover .post__bg2{
+    transform: scale(1.1);
+    transition: 2s all;
+    overflow: hidden; 
+}
+.post__item{
+    position: relative;
+    height: 250px;
+    background:blue;
+    margin: 10px;
+    border-radius: 5px;
+    /* padding: 10px; */  
+    overflow: hidden;
+    width: 100%;
+}
+.info{
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    width: 88%;
+    color: white;
+}
+.post-title{
+    margin: 0px;
+    font-weight: 900;
+}
+.time{
+    font-size: 8px;
+    margin: 1px;
+}

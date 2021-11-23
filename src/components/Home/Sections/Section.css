@@ -1,0 +1,224 @@
+.App{
+    background: #1c506f;
+}
+.container{
+    border: none;
+    
+}
+
+.trawell-section{
+    margin: 0px auto;
+    max-width: 90%;
+    
+}
+.section-title{
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid gainsboro; 
+    line-height: 0.1em;
+    margin: 10px 0 40px; 
+    text-transform:uppercase;
+    font-weight: bold;
+    font-size: 1.25rem;
+    
+    
+}
+.section-title span{
+    background: #1c506f;
+    padding: 0px 10px;
+    color: white;
+}
+.img-section{
+    width: 100%;
+}
+/* text-align: center; 
+   border-bottom: 1px solid #000; 
+   line-height: 0.1em;
+   margin: 10px 0 20px;  */
+
+   /* background:#fff; 
+   padding:0 10px;  */
+
+.topic{
+ position: relative;
+ overflow: hidden;
+ height: 300px;
+ background:red
+ 
+}
+.topic1{
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    background:green
+    
+   }
+.topic2{
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    background:orange;
+    
+}
+.topic3{
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    background:blue;
+    border-top-right-radius: 5px;
+    
+}
+.bg-topic{
+    background-image: url(../images/dining.jpg);
+    height: 290px;
+    filter: brightness(60%);
+    background-position: center;
+    background-size: cover;
+}
+.bg-topic1{
+  
+    background-image: url(../images/event.jpg);
+    height: 290px;
+    filter: brightness(60%);
+    background-position: center;
+    background-size: cover;
+}
+.bg-topic2{
+  
+    background-image: url(../images/nightlife.jpg);
+    height: 290px;
+    filter: brightness(60%);
+    background-position: center;
+    background-size: cover;
+}
+.bg-topic3{
+  
+    background-image: url(../images/shopping.jpg);
+    height: 290px;
+    filter: brightness(60%);
+    background-position: center;
+    background-size: cover;
+}
+.topic__block:hover .bg-topic{
+    transform: scale(1.1);
+    transition:1s;
+    -webkit-transition-timing-function: ease-out;
+    
+}
+.topic__block:hover .bg-topic1{
+    transform: scale(1.1);
+    transition:1s;
+    -webkit-transition-timing-function: ease-out;
+    
+}
+.topic__block:hover .bg-topic2{
+    transform: scale(1.1);
+    transition:1s;
+    -webkit-transition-timing-function: ease-out;
+    
+}
+.topic__block:hover .bg-topic3{
+    transform: scale(1.1);
+    transition:1s;
+    -webkit-transition-timing-function: ease-out;
+    overflow: hidden;
+    
+}
+.head-topic:hover{
+    cursor: pointer;
+}
+.title-topic{
+  position: absolute;
+  bottom: 20px;
+}
+.title-topic{
+    padding: 5px;
+    width: 80%;
+}
+.head-topic{
+    color: white;
+    font-weight: bold;
+}
+.title-topic span{
+    color: rgba(255,255,255,.8);
+    text-shadow: 2px 2px 4px #000000;
+}
+
+
+
+
+
+/* Slider */
+.section-slideshow{
+    width: 100%;
+    overflow: hidden;
+}
+.slider{
+   
+    width: 200px;
+    height: 200px;
+}
+.slide-image{
+    width: inherit;
+    margin: 0px;
+    height: 200px;
+    overflow: hidden;
+}
+.slide{
+    width: 200px;
+    display: flex;
+    overflow: hidden;
+}
+.right-arrow{
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    font-size: 2rem;
+    color: aqua;
+}
+.left-arrow{
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    font-size: 2rem;
+    color: aqua;
+}
+button.slick-arrow.slick-next {
+    /* z-index: 2; */
+    display: block;
+    position: absolute;
+    right: 45px;
+    border-radius: 24px;
+    background: gray;
+    opacity: 0.5;
+ 
+    width: 40px;
+    height: 40px;
+  
+}
+button.slick-arrow.slick-prev{
+    z-index: 2;
+    display: block;
+    position: absolute;
+    left: 45px;
+    font-size: 50px;
+    border-radius: 24px;
+    background: gray;
+    opacity: 0.5;
+  
+    width: 40px;
+    height: 40px;
+}
+.slide-image{
+    width: inherit;
+    height: inherit;
+   
+}
+.slide-image:hover{
+    background-size: cover;
+    background-position:center;
+    transform: scale(1.03);
+    transition:1s;
+    -webkit-transition-timing-function: ease-out;
+   
+}

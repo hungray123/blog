@@ -1,0 +1,60 @@
+.login{
+    margin-top: 150px;
+    height: 500px;
+    text-align: center;
+}
+.form__login{
+    height: auto;
+    display: inline-block;
+    width: 30%;
+    border:1px solid ghostwhite;
+    border-radius: 10px;
+
+}
+.form__login .title-login{
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 0.1;
+    margin-bottom: 20px;
+   
+    
+}
+
+.title-login span{
+    background: #1c506f;
+    text-align: center;
+    padding: 5px;
+    font-family: 'Raleway';
+    font-weight: 900;
+
+}
+.input__login{
+    margin: 0px auto;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    
+}
+.input__login input{
+    margin-top: 10px;
+    border-radius: 4px;
+    outline: 0;
+    border:none;
+    width: 90%;
+    
+    padding: 11px;
+    font-size: 16px;
+    position: relative;
+    
+    
+}
+.btn__login{
+   text-align: center;
+}
+.btn__login button{
+  display: inline-block;
+  margin-top: 10px;
+  width: 80px;
+  font-size: 13px !important;
+    
+}
