@@ -1,0 +1,100 @@
+.img_profile{
+    width: 40%;
+}
+.profile{
+
+   
+    margin: 0px;
+    height: 500px;
+}
+.main-profile{
+    border: 1px solid gray;
+    width: 70%;
+    margin: 0px auto;
+    padding: 10px;
+    height: 350px;
+    border-radius: 10px;
+    background: cornsilk;
+}
+
+.profile__title{
+    margin-bottom: 40px;
+    text-align: center;
+}
+.content__profile{
+  display: flex;
+  width: 60%;
+  margin: 0px auto;
+  position: relative;
+ 
+   
+}
+.profile__name{
+    display: grid;
+    padding: 5px;
+    margin-left: 5px;
+    font-weight: 900;
+    margin: 0px 0px 0px 20px;
+}
+.btn__profile{
+   margin-left: 15px;
+   position: absolute;
+   bottom: 0px;
+ 
+}
+.btn-pass{
+    margin-right: 5px;
+}
+
+
+
+
+/* 
+POPPUP UPDATE */
+
+.popup__Update{
+    position: absolute;
+    border: 1px solid red;
+    width: 40%;
+    height: 310px;
+    top: 21%;
+    left: 30%;
+    background: lawngreen;
+    border-radius: 10px;
+    
+  
+}
+.main-update{
+     padding: 10px;
+     display: block;
+     position: relative;
+    
+   
+     margin: 0px auto;
+     text-align: center;
+    
+}
+.popU{
+   margin: 5px;
+   font-size: 22px;
+   border-radius: 4px;
+   width: 50%;
+
+   border: none;
+}
+.pp__close{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 25px;
+   
+}
+.title__update{
+    margin-bottom: 40px;
+    margin-right: 5px;
+}
+.pp-btn-update{
+    margin-top: 10px;
+}
+
+

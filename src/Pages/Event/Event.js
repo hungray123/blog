@@ -1,24 +1,22 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-
 import './login.css'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useHistory } from "react-router-dom";
 import axios from 'axios';
 import { setUserSession } from '../../components/Utils/Common';
-
-function Event(props) {
+import { getUser,user__Role } from '../../components/Utils/Common'
+ import Nav from '../../components/Navbar/Navbar'
+import Cookies from 'js-cookie'
+function Event() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] =useState(null);
     const history = useHistory();
-    // useEffect(() => {
-    //     if (localStorage.getItem('user-info')) {
-    //         history.push("/")
-    //     }
-    // }, [])
-     function login() {
+    const [users,setUser]=useState('');
+
+
+    function login() {
         // console.warn(username, password)
         // let item = { username, password };
         // let result = fetch("http://localhost:3000/api/data", {
@@ -33,29 +31,41 @@ function Event(props) {
         // localStorage.setItem("user-info",JSON.stringify(result))
         // history.push("/home")
 
-        axios.post("http://localhost:5000/api/data",{
-            username: username,
-            password: password,
-        }).then(response=>{
-            console.log('response >>>',response);
-             // history.push("/home")
-               setUserSession(response.data.user);
-                history.push("/home")
+         
+
+        axios({
+            method:'POST',
+            url:'http://localhost:4000/local/dev',
+            data:{
+                username: username,
+                password: password
+            },
+           
+        }).then( async (response)=>{
+            console.log("response",response);
+            setUserSession(response.data.data);
+            user__Role(response.data.data.isAdmin);
+            console.log("hihi",response.data.data.isAdmin);
+            console.log("response",response.data.token);
+            localStorage.setItem('accessTokens',response.data.token);
+            Cookies.set('cookies',response.data.token);
+            history.replace("/home");
+           
+
+        }).catch(function (error){
+        //    console.log("error",error);
+           if (error.response.status === 400) setError(error.response.data.message);
+           else setError("Something went wrong. Please try again later.");
             
-
-        }).catch(error =>{
-            console.log('error >>>', error);
-            if(error.response.status===401 || error.response.status===400){
-                setError(error.response.data.message);
-            }else{
-                setError("Something wrong")
-            }
-
         });
-
+    
+        //  console.warn(username, password)
     }
+
+    
     return (
         <>
+          <Nav/>
             <div className="container login">
                 <div className="form__login">
                     <h5 className="title-login">
@@ -70,7 +80,7 @@ function Event(props) {
 
                         <div className="btn__login">
 
-                            <button onClick={login} className="btn btn-danger">Login</button>
+                            <button onClick={login} type="button" className="btn btn-danger">Login</button>
                             <Link to='/dangky' style={{ display: 'inherit' }}>Bạn chưa có tài khoản</Link>
 
                         </div>

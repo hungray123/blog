@@ -2,24 +2,143 @@ import React from 'react'; // imr
 import  { useState } from 'react'; //imrs
 import ReactDOM from 'react-dom'; // imrd
 import { Link,NavLink } from 'react-router-dom';
-import { getUser } from '../Utils/Common';
+import { getUser, removeUserSession, getRole } from '../Utils/Common';
 import  './navbar.css'
-
+import {useEffect} from 'react';
+import { useHistory } from "react-router-dom";
+import axios from 'axios';
+import  Dropdown from './Dropdown';
 
 
 
 
 function Navbar(props){
 
-  
+
    const activeStyle = { color: 'red' };
+   const history = useHistory();
    const [click, setClick] = useState(); //ufs
    const handleClick =()=>setClick(!click)
    const openlink = () =>{
        window.open("https://www.youtube.com/watch?v=T2MhVxJxsL0&t=1656s")
    }
-   const user = getUser();
-   console.log(user);
+   const [dropdown ,setDropdown]=useState(false);
+
+   function handleprofile(){
+      
+    if(dropdown===false){
+        setDropdown(true);
+        console.log(dropdown)
+    }else{
+        setDropdown(false);
+        console.log(dropdown)
+    }
+       
+      
+   }
+  
+  
+
+//   const [user, setUser]=useState({});
+//   const token= sessionStorage.getItem("user")
+//   console.log("ds"+token)
+//   console.log("hihi"+user)
+
+//   useEffect(() => {
+
+//     loadData();
+     
+//   }, [token])
+
+//   const loadData=()=>{
+
+//     var myHeaders = new Headers();
+//     myHeaders.append("Content-Type", "application/json");
+    
+//     var urlencoded = new URLSearchParams();
+    
+//     var requestOptions = {
+//       method: 'GET',
+//       headers: myHeaders,
+//       body: urlencoded,
+//       redirect: 'follow'
+//     };
+    
+//     fetch("http://localhost:4000/local/dev", requestOptions)
+//       .then(response => response.text())
+//       .then(result => {
+//         console.log(result)
+//         setUser(result);
+//       })
+//       .catch(error => console.log('error', error));
+  
+//   }
+  
+ const [uu ,setUser]=useState(getUser());
+
+
+ //console.log(tg.username);
+//   useEffect(() => {
+//      loadData();
+//   }, [u])
+//   let loadData=()=>{
+//    var req={
+//        method:'GET',
+//        redirect:"follow"
+//    };
+
+//    fetch("http://localhost:4000/local/dev",req).then(res=>{
+//        if(res.ok){
+//            return res.json();
+//        }
+//        throw new Error(res.status)
+//    })
+//    .then(result=>{
+//        setUser(result);
+//    })
+//    .catch(err=>{
+//        console.log(err)
+//    })
+//   }
+//  console.log("hihi"+user);
+  //console.log("hihi"+getUser);
+ // console.log(typeof("hihi"+getUser))
+// const user =getUser();
+//   useEffect(() => {
+//      setUser(getUser);
+    
+//   },[]);
+// useEffect(() => {
+
+    
+//     //  setUser(true);
+    
+// }, [])
+  
+  const handleLogout = () => {  
+      removeUserSession();  
+      history.push('/event');
+      setUser(false);
+  }
+ 
+ 
+  const [role ,setRole]=useState(getRole());
+  //console.log(role.username);
+  const acc=false;
+ 
+   useEffect(() => {
+       if(role==true){
+          
+          console.log("day la ADmin",role)
+       }else{
+           
+       }
+      
+   }, [role]);
+
+
+
+  // console.log("kaka"+user);
         return (
             <div className="navbar">
                 <div className="trawell-top-bar">
@@ -42,7 +161,54 @@ function Navbar(props){
                             </li>
                         </ul>
                         <div className="login__block">
-                           <Link className="a__login" to="/event"></Link>
+                           
+                                 {uu ?(
+                                    
+                                     <div>
+                                        
+                                         <p onClick={handleprofile} className='a__login ' >{uu.username} <i className={dropdown ?'fas fa-caret-up':"fas fa-caret-down"}/>
+                                          </p>
+                                       
+                                             
+                                          <div className={dropdown ? 'dr__show':"dsf"}>
+                                              {role? (
+                                                     <ul className="dr_show">
+                                                     <li className="dr__link"><Link to='/profile'>Profile</Link></li>
+                                                     <li className="dr__link"><Link to='/manager'>Manager</Link></li>
+                                                     <li className="dr__link"><Link to='/event'onClick={handleLogout}>Logout</Link></li>
+                                                 </ul>
+                                              ):(
+                                                <ul className="dr_show">
+                                                <li className="dr__link"><Link to='/profile'>Profile</Link></li>
+                                                <li className="dr__link"><Link to='/event'onClick={handleLogout}>Logout</Link></li>
+                                            </ul>
+                                              )
+                                            }
+                                          </div>
+                                     
+                                     </div>
+                                     
+                                 ):(
+
+                                    <Link  className="a__login" to="/event">Login
+                                  
+                                     
+                                     </Link>
+
+                                 )}
+                           
+                         
+                            
+                        
+                        
+                       
+                             
+                               
+                             
+                               
+                             
+                               
+                              
                          </div>
                     </div>
                      

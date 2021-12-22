@@ -62,15 +62,16 @@ input.show{
   display: flex;
   justify-content: flex-end;
   padding: 8px !important;
+  margin-right: 67px;
 }
 .login__block .a__login{
   color: green ;
   font-weight: bold;
   text-decoration: none;
   margin-right: 20px;
-  
-  
-  
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 7px;
   
 }
 .nav-top-list{

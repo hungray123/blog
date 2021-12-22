@@ -11,12 +11,14 @@ import SectionLayout from '../Home/Sections/SectionLayout';
 import Footer from '../Home/footer/footer'
 import { Route, Switch, useRouteMatch } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
+import Nav from'../Navbar/Navbar';
 const Home=()=>{
         const math=useRouteMatch();
         console.log(math)
   
         return (
                 <div className="xxx">
+                             <Nav/>
                        
                                 {/* UI */}
                                        <Section/>

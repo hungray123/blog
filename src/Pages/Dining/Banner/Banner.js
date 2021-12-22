@@ -1,9 +1,11 @@
 import React from 'react';
 import './Banner.css'
-
+import Nav from '../../../components/Navbar/Navbar'
 
 function Banner() {
     return (
+       <>
+         <Nav/>
         <div className="containers">
             <div className="dining-bg"/>
             <div className="content-block">
@@ -14,6 +16,7 @@ function Banner() {
 
             
         </div>
+       </>
     );
 }
 

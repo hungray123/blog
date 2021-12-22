@@ -1,0 +1,27 @@
+
+.dr__show{
+    display: block;
+    background: #0d6efd;
+    /* padding: 4px; */
+    z-index: 1;
+    position: relative;
+
+}
+li.dr__link:hover{
+    background: #6f42c1;
+
+}
+.dr__link>a{
+   
+    margin-left: 5px;
+    text-decoration: none;
+    color: white;
+}
+ul.dr_show {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.dsf{
+    display: none;
+}
